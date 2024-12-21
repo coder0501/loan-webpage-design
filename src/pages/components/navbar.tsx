@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-// import "./Navbar.css";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa"; // Import icons from react-icons
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons from react-icons
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     const [activeTab, setActiveTab] = useState("");
     const [hoverTab, setHoverTab] = useState("");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [IsDropdownOpen, setIsDropdownOpen] = useState(true);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     const handleMouseEnter = () => {
+        console.log(IsDropdownOpen);
         setIsDropdownOpen(true);
         setHoverTab("Courses");
     };
